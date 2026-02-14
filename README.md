@@ -33,3 +33,7 @@ The lyrics to the song
 # Known Issues
 Error 202 in ddgr. 
 Just run ```ddgr --noua sth``` and it will work the next time again :D
+
+# Disclaimer
+This software's purpose is purely educational. I am not responsible for how you use this package. This repository and all others associated with it are not affiliated with, authorized, or endorsed by Ultimate-Guitar.com.
+
