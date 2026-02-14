@@ -1,3 +1,4 @@
 .devlang
 ultimate-guitar-scraper/
-songs/latest.txt
+./songs/*
+
