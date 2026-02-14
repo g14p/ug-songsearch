@@ -50,7 +50,11 @@ The lyrics to the song
 # Known Issues
 Error 202 in ddgr. 
 
-Just run ```ugss --repair`` and it will work the next time again :D
+Just run 
+```bash
+ugss --repair
+```
+and it will work the next time again :D
 
 
 # Disclaimer
