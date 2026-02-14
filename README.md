@@ -11,6 +11,10 @@ Running install script should now setup everything if you give sudo access.
 ```bash
 $ ./utils/install.sh
 ```
+## Automated Usage (Selects always first link it finds which works well)
+```bash
+ugss "your song name"
+```
 
 ## Usage in Select mode
 
@@ -42,10 +46,7 @@ $ 1
 B     E        A
 The lyrics to the song
 ```
-# Automated Usage (Selects always first link)
-```bash
-ugss "your song name"
-```
+
 # Known Issues
 Error 202 in ddgr. 
 
