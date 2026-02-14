@@ -2,7 +2,9 @@
 echo "scraper called from $(pwd)"
 WORKDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $WORKDIR 
-url=$@
+echo ls  && ls
+url=$(cat ../tmpurl)
+url=${url:19:999}
 echo ---------------------------------------
 echo "'${url}' is our raw URL in scaper land "
 echo ---------------------------------------
@@ -21,7 +23,6 @@ if [ -f ../songs/latest.txt ]; then
 else 
     install -Dv /dev/null ../songs/latest.txt; 
 fi
-echo -e "\033[44m Close ddgr with q and your song will be displayed."
-echo -e "\033[0m"
+echo -e "\033[44m Close ddgr with q and your song will be displayed. \033[0m"
 ../ultimate-guitar-scraper/ultimate-guitar-scraper f --id ${id} > ../songs/latest.txt
 
