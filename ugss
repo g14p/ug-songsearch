@@ -1,11 +1,17 @@
 #!/bin/bash
 
 echo Arguments passed to us are: $@
-WORKDIR="."
+
+PWD_BEFORE=$(pwd)
+WORKDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+echo Directory where this is located is: ${WORKDIR}
+cd $WORKDIR && WORKDIR="."
 echo In case of Error 202 just start "ddgr --noua something" and quit it again with q
 
 ddgr -n 5 --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${@}"
 
 cat songs/latest.txt
+
+cd $PWD_BEFORE
 
 
