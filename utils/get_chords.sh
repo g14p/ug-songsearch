@@ -10,4 +10,7 @@ else
 fi
 
 echo "song id is: ${id} i think."
-../ultimate-guitar-scraper/ultimate-guitar-scraper f --id ${id}
+if [ -f songs/latest.txt ]; then echo append latest song..; else touch songs/latest.txt; fi
+echo -e "\033[44m Close ddgr with q and your song will be displayed."
+../ultimate-guitar-scraper/ultimate-guitar-scraper f --id ${id} >> songs/latest.txt
+

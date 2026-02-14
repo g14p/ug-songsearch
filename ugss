@@ -2,6 +2,10 @@
 
 echo Arguments passed to us are: $@
 WORKDIR="."
+echo In case of Error 202 just start "ddgr --noua something" and quit it again with q
+
 ddgr -n 5 --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${@}"
+
+cat songs/latest.txt
 
 
