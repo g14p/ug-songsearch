@@ -5,6 +5,10 @@ cd $WORKDIR
 echo ls  && ls
 url=$(cat ../tmpurl)
 url=${url:19:999}
+if [[ $@ != "" ]]; then
+    url=$@
+    echo overwrote tmpurl information with url passed to script
+fi
 echo ---------------------------------------
 echo "'${url}' is our raw URL in scaper land "
 echo ---------------------------------------
