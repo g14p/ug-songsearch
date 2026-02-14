@@ -8,9 +8,12 @@ url=${url:19:999}
 echo ---------------------------------------
 echo "'${url}' is our raw URL in scaper land "
 echo ---------------------------------------
-if [[ "$url" =~ ([0-9]{2,16})$ ]]; then
+if [[ "$url" =~ [0-9]{2,16} ]]; then
+    
+    echo "Song ID: ${BASH_REMATCH[0]}"
     echo "Song ID: ${BASH_REMATCH[1]}"
-    id=${BASH_REMATCH[1]} 
+    echo "Song ID: ${BASH_REMATCH[2]}"
+    id=${BASH_REMATCH[0]} 
 else
     echo "Invalid URL"
     echo -e "\033[32m this is not okay: \033[0m ${url}"
