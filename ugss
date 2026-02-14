@@ -8,11 +8,30 @@ WORKDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo Directory where this is located is: ${WORKDIR}
 cd $WORKDIR && WORKDIR="."
 
+
+repair(){
+    #repair ddgr error 202
+    ddgr -n 1 --noua "cake" <<< $"1\n\n\n"
+}
+
 if [ $@[0] == "--select" ]; then
     songname=${@:2}
     echo "Search song '${songname}' ... "
     ddgr -n 5    --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${songname}"
     echo executed with all args minus first arg
+
+elif [ $1 == "--repair" ]; then
+    echo Repairing..
+    sleep 1
+    repair > /dev/null
+elif [ $1 == "--help" ]; then
+    echo "Welcome to ultimage guitar song search (ugss)"
+    echo "-------------------------------------------"
+    echo "USAGE: ugss [OPTION] 'your song name' "
+    echo "--repair : fix duckduckgo search utility that sometimes fails on Error 202
+    echo "--select : enable the manual selection of one of 5 search results"
+    ehco "--help   : what u c here"
+
 else
     #ddgr -n 5 --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${@}" <<< $"1\n\n\n\n"
     songname=${@}
@@ -35,7 +54,3 @@ echo "then and quit ddgr again with 'q'. That will solve it."
 echo -e "\033[0m"
 cd $PWD_BEFORE
 
-cake(){
-    ddgr -n 1 --noua "cake" <<< $"1\n\n\n"
-}
-#cake

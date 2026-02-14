@@ -9,7 +9,7 @@ to play it on your beloved instrument without opening a browser.
 
 # Usage
 ```bash
-$ ./ugss "Shiny happy people"
+$ ugss --select "Shiny happy people"
 ```
 // duckduckgo-cli-version lists 5 results and lets you choose
 // CHOOSE YOUR RESULT AS NUMBER!
@@ -29,13 +29,16 @@ $ 1
 B     E        A
 The lyrics to the song
 ```
-# Automated Usage (Select always first link)
+# Automated Usage (Selects always first link)
 ```bash
-ugss "your song name" <<< $'1\nq\n'
+ugss "your song name"
 ```
 # Known Issues
 Error 202 in ddgr. 
+
+Just run ```ugss --repair`` and it will work the next time again :D
 Just run ```ddgr --noua sth``` and it will work the next time again :D
+
 
 # Disclaimer
 This software's purpose is purely educational. I am not responsible for how you use this package. This repository and all others associated with it are not affiliated with, authorized, or endorsed by Ultimate-Guitar.com.
