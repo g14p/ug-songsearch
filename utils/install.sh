@@ -19,6 +19,7 @@ echo "(y / n)"
 read consent
 if [ $consent == "y" ];  then 
     echo 'alias ugss="~/git/ug-songsearch/ugss $@"' >> ~/.bashrc
+    source ~/.bashrc
 else 
     echo "making no alias. You can call it from the gitfolder as well :)"
     exit 0; 

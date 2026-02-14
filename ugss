@@ -1,17 +1,41 @@
 #!/bin/bash
 
-echo Arguments passed to us are: $@
+#echo Arguments passed to us are: $@
+echo Arguments passed to us are first: $1
 
 PWD_BEFORE=$(pwd)
 WORKDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo Directory where this is located is: ${WORKDIR}
 cd $WORKDIR && WORKDIR="."
-echo In case of Error 202 just start "ddgr --noua something" and quit it again with q
 
-ddgr -n 5 --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${@}"
+if [ $@[0] == "--select" ]; then
+    songname=${@:2}
+    echo "Search song '${songname}' ... "
+    ddgr -n 5    --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${songname}"
+    echo executed with all args minus first arg
+else
+    #ddgr -n 5 --noua --url-handler ${WORKDIR}/utils/get_chords.sh "site:ultimate-guitar.com ${@}" <<< $"1\n\n\n\n"
+    songname=${@}
+    echo "Search song '${songname}' ... "
+    ddgr -n 5 -x --noua --url-handler echo  "site:ultimate-guitar.com ${songname}"<<< $'1\n\n\n' > ${WORKDIR}/tmp
+    echo found url: 
+    cat tmp
+    echo "lfound raw url:" 
+    cat tmp | tail -n 2 | head -n 1  > tmpurl
+    cat tmpurl | ${WORKDIR}/utils/get_chords.sh 
+
+    echo executed with all args
+fi
+
 
 cat songs/latest.txt
 
+echo -e "\033[42m In case of Error 202 just start 'ddgr --noua something'"
+echo "then and quit ddgr again with 'q'. That will solve it."
+echo -e "\033[0m"
 cd $PWD_BEFORE
 
-
+cake(){
+    ddgr -n 1 --noua "cake" <<< $"1\n\n\n"
+}
+#cake

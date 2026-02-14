@@ -29,7 +29,10 @@ $ 1
 B     E        A
 The lyrics to the song
 ```
-
+# Automated Usage (Select always first link)
+```bash
+ugss "your song name" <<< $'1\nq\n'
+```
 # Known Issues
 Error 202 in ddgr. 
 Just run ```ddgr --noua sth``` and it will work the next time again :D
