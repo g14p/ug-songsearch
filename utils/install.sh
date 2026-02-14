@@ -1,8 +1,3 @@
-please_run() {
-    echo Please run ${1}
-    echo ${1} | xclip -sel clipboard
-}
-
 echo we will install requirements. Okay?
 echo "(y or n)"
 read consent
