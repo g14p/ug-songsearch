@@ -1,4 +1,4 @@
-# Ultimate Guitar Songsearch (for Terminal)
+# Ultimate Guitar Songsearch (for Terminal) 🎸
 
 A combination of ddgr (DuckDuckgo CLI) and (ultimate-guitar-scraper)
 such that you can quicky find a song 
