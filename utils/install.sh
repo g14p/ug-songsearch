@@ -1,4 +1,5 @@
-echo we will install requirements. Okay?
+echo we will install requirements. You need to run this with sudo. Okay?
+echo Requirements: ultimate-guitar-scraper, golang, ddgr
 echo "(y or n)"
 read consent
 
