@@ -12,7 +12,7 @@ $ ./ugss "Shiny happy people"
 
 ... -> duckduckgo-cli-version lists 5 results and lets you choose
 
-$ <CHOOSERESULTNUMBER>
+.... CHOOSE YOUR RESULT AS NUMBER!
 ... -> duckduckgo calls the utils/get_chords.sh with the URL
 
 ... -> utils/get_chords.sh calls ultimate-guitar-scraper with the song id
