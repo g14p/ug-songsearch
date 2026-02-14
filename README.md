@@ -5,7 +5,7 @@ such that you can quicky find a song
 to play it on your beloved instrument without opening a browser.
 
 # Install
-$ ./utils/install.sh
+```$ ./utils/install.sh```
 
 # Usage
 ```bash
