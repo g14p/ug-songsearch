@@ -28,7 +28,7 @@ elif [ $1 == "--help" ]; then
     echo "Welcome to ultimage guitar song search (ugss)"
     echo "-------------------------------------------"
     echo "USAGE: ugss [OPTION] 'your song name' "
-    echo "--repair : fix duckduckgo search utility that sometimes fails on Error 202
+    echo "--repair : fix duckduckgo search utility that sometimes fails on Error 202"
     echo "--select : enable the manual selection of one of 5 search results"
     ehco "--help   : what u c here"
 
